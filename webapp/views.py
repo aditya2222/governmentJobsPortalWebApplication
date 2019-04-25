@@ -9,6 +9,7 @@ class JobsListView(generic.ListView):
 	template_name = 'jobs_list.html'
 	models = JobsModel
 	queryset = JobsModel.objects.all()
+	paginate_by = 1
 
 
 class JobsDetailView(generic.DetailView):

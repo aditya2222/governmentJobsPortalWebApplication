@@ -10,3 +10,5 @@ class JobsModel(models.Model):
 
 	def __str__(self):
 		return self.jobName
+
+

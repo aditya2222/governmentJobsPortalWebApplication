@@ -25,12 +25,16 @@
             background-image: url("https://webgradients.com/public/webgradients_png/047%20Fly%20High.png");
 
             /* Full height */
-            height: 100%;
+            height: 5000px;
 
             /* Center and scale the image nicely */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+
+        #dtBasicExample_paginate {
+            float: left;
         }
     </style>
 
@@ -41,10 +45,12 @@
 
 
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark blue-gradient">
+<nav class="navbar navbar-expand-lg navbar-dark morpheus-den-gradient">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#"><img style="width: 100px"
+                                          src="https://www.sarkariguy.com/wp-content/themes/sarkariguy/assets/img/Sarkariguy-1.png"
+                                          alt=""></a>
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,43 +90,366 @@
 <div class="bg">
     <div class="container">
 
+        <div class="row">
+            <div class="col-4">
+                <ul class="list-group">
+                    <li class="list-group-item active">First Job</li>
 
-        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-            <thead>
-            <tr>
-                <th class="th-sm">Name
+                    {% for object in object_list %}
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
 
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for object in object_list %}
-            <tr>
-                <td><a href="{% url 'jobs' pk=object.pk %}">{{object.jobName}}</a></td>
-            </tr>
-            {% endfor %}
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
 
 
-            </tbody>
-            <tfoot>
-            <tr>
-                <th>Name
-                </th>
+                    {%endfor%}
 
-            </tr>
+                    <li class="list-group-item">
+                        {% if is_paginated %}
+                        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+                        </div>
+                        {% endif %}
 
-            </tfoot>
 
-        </table>
+                    </li>
 
 
-        <button style="float: right" class="btn btn-dark" type="button" onclick="disablePagination()">View All</button>
+                </ul>
+            </div>
+
+            <div class="col-4">
+                <ul class="list-group">
+                    <li class="list-group-item active">First Job</li>
+
+                    {% for object in object_list %}
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+
+                    {%endfor%}
+
+                    <li class="list-group-item">
+                        {% if is_paginated %}
+                        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+                        </div>
+                        {% endif %}
+
+
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+            <div class="col-4">
+                <ul class="list-group">
+                    <li class="list-group-item active">First Job</li>
+
+                    {% for object in object_list %}
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+
+                    {%endfor%}
+
+                    <li class="list-group-item">
+                        {% if is_paginated %}
+                        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+                        </div>
+                        {% endif %}
+
+
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <ul class="list-group">
+                    <li class="list-group-item active">First Job</li>
+
+                    {% for object in object_list %}
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+
+                    {%endfor%}
+
+                    <li class="list-group-item">
+                        {% if is_paginated %}
+                        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+                        </div>
+                        {% endif %}
+
+
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="col-6">
+                <ul class="list-group">
+                    <li class="list-group-item active">First Job</li>
+
+                    {% for object in object_list %}
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+
+                    {%endfor%}
+
+                    <li class="list-group-item">
+                        {% if is_paginated %}
+                        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+                        </div>
+                        {% endif %}
+
+
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+            <div class="col-4">
+                <ul class="list-group">
+                    <li class="list-group-item active">First Job</li>
+
+                    {% for object in object_list %}
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+                    <li class="list-group-item"><span style="font-weight: bold">Recruiter Name- </span>{{object.jobName}}
+                        <span style="font-weight: bold; float: right;">08.06.19</span>
+                    </li>
+
+
+                    {%endfor%}
+
+                    <li class="list-group-item">
+                        {% if is_paginated %}
+                        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+                        </div>
+                        {% endif %}
+
+
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+
 
     </div>
 
 
     <!-- Footer -->
-    <footer class="page-footer font-small blue-gradient pt-4" style="margin-top: 12rem">
+    <footer class="page-footer font-small morpheus-den-gradient pt-4" style="position: fixed; width: 100%">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
@@ -196,7 +525,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+            <a href="https://mdbootstrap.com/education/bootstrap/"> Your Website</a>
         </div>
         <!-- Copyright -->
 
@@ -230,6 +559,7 @@
 <script type="text/javascript">
     $(document).ready(() => {
         $('#dtBasicExample_length').css("visibility", "hidden")
+        $('#dtBasicExample_info').css("visibility", "hidden")
     })
 </script>
 
@@ -241,7 +571,6 @@
 
         $('#dtBasicExample').DataTable({
             searching: false,
-            paging: false
         });
         $('.dataTables_length').addClass('bs-select');
     }
